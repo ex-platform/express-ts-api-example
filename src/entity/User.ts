@@ -1,17 +1,20 @@
-import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
+import {
+  Entity,
+  Column,
+  OneToMany,
+} from "typeorm";
+import Model from "./Model";
+import { Post } from "./Post";
 
 @Entity("users")
-export class User extends BaseEntity{
+export class User extends Model {
 
-    @PrimaryGeneratedColumn()
-    id: number;
+  @Column()
+  name: string;
 
-    @Column()
-    name: string;
+  @Column()
+  email: string;
 
-    @Column()
-    email: string;
-
-    @Column()
-    age: number;
+  @OneToMany(()=> Post, post => post.user)
+  posts: Post[]
 }

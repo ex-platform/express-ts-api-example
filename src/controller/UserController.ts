@@ -5,7 +5,7 @@ import {
   Delete,
   Get,
   JsonController,
-  NotFoundError,
+  OnUndefined,
   Param,
   Post,
   Put,
@@ -20,12 +20,9 @@ export class UserController {
   }
 
   @Get("/users/:id")
+  @OnUndefined(404)
   async one(@Param("id") id: number) {
-    const user = await User.findOne(id);
-    if (user) {
-      return user;
-    }
-    throw new NotFoundError(`User not found.`);
+    return User.findOne(id, {relations: ['posts']});
   }
 
   @Post("/users")
@@ -36,16 +33,23 @@ export class UserController {
   @Put("/users/:id")
   async update(@Param("id") id: number, @Body() user: User) {
     const userToUpdate = await User.findOne(id);
+    const { name, email } = user;
     if (userToUpdate) {
-      userToUpdate.id = id
-      return userToUpdate.save()
+      userToUpdate.name = name || userToUpdate.name;
+      userToUpdate.email = email || userToUpdate.email;
+      return userToUpdate.save();
     }
-    throw new BadRequestError(`Bad Request.`)
+    throw new BadRequestError(`Bad Request.`);
   }
 
   @Delete("/users/:id")
+  @OnUndefined(204)
   async remove(@Param("id") id: number) {
-    const userToUpdate = await User.findOneOrFail(id);
-    return userToUpdate.remove();
+    const userToDelete = await User.findOne(id);
+    if (userToDelete) {
+      await userToDelete.remove();
+      return;
+    }
+    throw new BadRequestError(`Bad Request.`);
   }
 }
