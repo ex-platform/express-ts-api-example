@@ -12,7 +12,7 @@ node_modules/
 .env
 
 # gerate output
-dist
+build
 
 # mariaDB local files
 db/data/

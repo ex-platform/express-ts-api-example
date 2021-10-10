@@ -1,3 +1,4 @@
+import { validate } from "class-validator";
 import { NextFunction, Request, Response } from "express";
 import {
   BadRequestError,
@@ -15,19 +16,24 @@ import { User } from "../entity/User";
 @JsonController()
 export class UserController {
   @Get("/users")
-  all(request: Request, response: Response, next: NextFunction) {
+  all() {
     return User.find();
   }
 
   @Get("/users/:id")
   @OnUndefined(404)
   async one(@Param("id") id: number) {
-    return User.findOne(id, {relations: ['posts']});
+    return User.findOne(id, { relations: ["posts"] });
   }
 
   @Post("/users")
-  save(@Body() user: User) {
-    return User.save(user);
+  async save(@Body() user: User) {
+    const errors = await validate(user);
+    console.log(errors)
+    if (errors.length == 0) {
+      return User.save(user);
+    }
+    throw errors;
   }
 
   @Put("/users/:id")
