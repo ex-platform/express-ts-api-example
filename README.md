@@ -2,6 +2,8 @@
 
 REST API using Express, TypeScript, TypeORM.
 
+![Desktop img](./desktop.jpg)
+
 ## Command
 
 ```bash
