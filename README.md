@@ -16,8 +16,14 @@ docker-compose up
 # drop schema
 yarn run typeorm schema:drop
 
+# create migration
+yarn typeorm migration:generate -n <MIGRATION_NAME>
+
 # sync schema
-yarn run typeorm schema:sync
+yarn typeorm migration:run
+
+# show migration
+yarn run typeorm migration:show
 ```
 
 ## Recommended IDE Setup
