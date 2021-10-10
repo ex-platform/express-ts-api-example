@@ -1,0 +1,129 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "users",
+  "dateExported": "2021-10-10T09:00:38.343Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "containerId": "",
+      "sortNum": 10000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        }
+      ],
+      "colId": "2790d75b-6d46-40cf-840b-363beb0b135a",
+      "name": "READ",
+      "url": "http://localhost:3000/users",
+      "method": "GET",
+      "modified": "2021-10-10T08:35:04.082Z",
+      "created": "2021-10-10T08:34:28.891Z",
+      "_id": "474d0f5d-5782-4c6c-a0a0-be5f89eb61d3",
+      "params": [],
+      "tests": []
+    },
+    {
+      "containerId": "",
+      "sortNum": 20000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        }
+      ],
+      "colId": "2790d75b-6d46-40cf-840b-363beb0b135a",
+      "name": "CREATE",
+      "url": "http://localhost:3000/users",
+      "method": "POST",
+      "modified": "2021-10-10T08:49:06.922Z",
+      "created": "2021-10-10T08:42:10.926Z",
+      "_id": "a8c34200-b826-487e-bbd2-a714adbbcc60",
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n    \"name\": \"John Doe\",\n    \"e-mail\": \"john@email.com\",\n    \"age\": 30\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "containerId": "",
+      "sortNum": 30000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        }
+      ],
+      "colId": "2790d75b-6d46-40cf-840b-363beb0b135a",
+      "name": "UPDATE",
+      "url": "http://localhost:3000/users/1",
+      "method": "PUT",
+      "modified": "2021-10-10T08:44:50.184Z",
+      "created": "2021-10-10T08:44:02.764Z",
+      "_id": "0600d0c1-ce10-4fdb-8f77-4fd15bdab016",
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n    \"name\": \"Timber\",\n    \"email\": \"timber@email.com\",\n    \"age\": 27\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "containerId": "",
+      "sortNum": 40000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        }
+      ],
+      "colId": "2790d75b-6d46-40cf-840b-363beb0b135a",
+      "name": "DELETE",
+      "url": "http://localhost:3000/users/3",
+      "method": "DELETE",
+      "modified": "2021-10-10T08:59:08.125Z",
+      "created": "2021-10-10T08:51:04.226Z",
+      "_id": "c2c90327-ec3a-4c07-a0a5-9636b7b9ce8b",
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n    \"name\": \"Timber\",\n    \"email\": \"timber@email.com\",\n    \"age\": 27\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "containerId": "",
+      "sortNum": 50000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        }
+      ],
+      "colId": "2790d75b-6d46-40cf-840b-363beb0b135a",
+      "name": "FIND",
+      "url": "http://localhost:3000/users/1",
+      "method": "GET",
+      "modified": "2021-10-10T08:52:02.473Z",
+      "created": "2021-10-10T08:51:48.116Z",
+      "_id": "f64a4d67-8659-44ac-b2c3-75500e3a9e85",
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n    \"name\": \"Timber\",\n    \"email\": \"timber@email.com\",\n    \"age\": 27\n}",
+        "form": []
+      },
+      "tests": []
+    }
+  ]
+}
