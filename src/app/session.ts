@@ -3,7 +3,7 @@ const FileStore = require("session-file-store")(session);
 
 import config from "./config";
 
-declare module 'express-session' {
+declare module "express-session" {
   interface SessionData {
     view: number | undefined;
   }
@@ -11,6 +11,7 @@ declare module 'express-session' {
 
 interface CookieOptions {
   secure?: boolean | "auto" | undefined;
+  maxAge: number;
 }
 
 interface Session {
@@ -25,8 +26,10 @@ const sess: Session = {
   secret: config.secretKey,
   resave: false,
   saveUninitialized: true,
-  cookie: {},
   store: new FileStore(),
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24 * 30, // 30 days
+  },
 };
 
 if (config.isProdMode) {
