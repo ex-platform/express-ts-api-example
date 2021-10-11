@@ -10,6 +10,9 @@ REST API using Express, TypeScript, TypeORM.
 # install
 yarn
 
+# create .env file
+touch .env
+
 # start mariadb
 docker-compose up -d
 

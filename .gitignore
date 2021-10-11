@@ -16,3 +16,6 @@ build
 
 # mariaDB local files
 db/data/
+
+# sessions
+sessions/
