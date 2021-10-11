@@ -4,23 +4,33 @@ REST API using Express, TypeScript, TypeORM.
 
 ![Desktop img](./desktop.jpg)
 
-## Command
+## Initial setup
 
 ```bash
 # install
 yarn
 
 # start mariadb
-docker-compose up
+docker-compose up -d
 
 # drop schema
 yarn run typeorm schema:drop
 
-# create migration
-yarn typeorm migration:generate -n <MIGRATION_NAME>
-
 # sync schema
 yarn typeorm migration:run
+
+# show migration
+yarn run typeorm migration:show
+
+# start dev server
+yarn run dev
+```
+
+## Migration
+
+```bash
+# create migration
+yarn typeorm migration:generate -n <MIGRATION_NAME>
 
 # show migration
 yarn run typeorm migration:show
