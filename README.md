@@ -39,6 +39,13 @@ yarn typeorm migration:generate -n <MIGRATION_NAME>
 yarn run typeorm migration:show
 ```
 
+## Middleware
+
+- express-session: Simple session middleware maintained by the Expressjs team.
+- helmet: Secure app by setting various HTTP headers.
+- morgan: HTTP request logger maintained by the Expressjs team.
+- passport: Authentication middleware for Node.js.
+
 ## Recommended IDE Setup
 
 - VSCode + [Thunder client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)
