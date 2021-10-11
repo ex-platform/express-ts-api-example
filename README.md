@@ -39,12 +39,26 @@ yarn typeorm migration:generate -n <MIGRATION_NAME>
 yarn run typeorm migration:show
 ```
 
+If in mono-repo, you need to change script in `package.json` and use `src/app/typeorm.ts`
+
+```json
+{
+  "script": {
+    // from
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js",
+    // to
+    "typeorm": "ts-node ../../node_modules/typeorm/cli.js",
+  }
+}
+```
+
 ## Middleware
 
 - express-session: Simple session middleware maintained by the Expressjs team.
 - helmet: Secure app by setting various HTTP headers.
 - morgan: HTTP request logger maintained by the Expressjs team.
 - passport: Authentication middleware for Node.js.
+
 
 ## Recommended IDE Setup
 
