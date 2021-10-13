@@ -1,5 +1,7 @@
 # express-ts-api-example
 
+![example workflow](https://github.com/ex-platform/express-ts-api-example/actions/workflows/node.js.yml/badge.svg)
+
 REST API using Express, TypeScript, TypeORM.
 
 ![Desktop img](./desktop.jpg)
