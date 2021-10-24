@@ -1,9 +1,11 @@
 import passport = require("passport");
 
-import { User } from "../../entity/User";
 
+import jwtStrategy from "./jwt";
 import localStrategy from "./local";
 import kakaoStrategy from "./kakao";
+import anonymousStrategy from "./anomy";
+import { User } from "../../entity/User";
 // import naverStrategy from "./naverStrategy";
 
 const passportConfig = () => {
@@ -21,6 +23,8 @@ const passportConfig = () => {
 
   passport.use("local", localStrategy);
   passport.use("kakao", kakaoStrategy);
+  passport.use("jwt", jwtStrategy)
+  passport.use("anonymous", anonymousStrategy)
 };
 
 export default passportConfig;

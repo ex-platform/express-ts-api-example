@@ -42,4 +42,4 @@ const handleErrors: ErrorRequestHandler = (err: AppError, req, res, next) => {
   return res.status(err.statusCode).json({ err });
 };
 
-export { handleErrors, handleNotFound };
+export { handleErrors, handleNotFound, AppError };
