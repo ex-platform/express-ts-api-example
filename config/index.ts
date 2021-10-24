@@ -14,7 +14,7 @@ interface Config {
 const config: Config = {
   db,
   port: parseInt(process.env.PORT) || 3000,
-  isProdMode: process.env.NODE_ENV != "development" || false,
+  isProdMode: process.env.NODE_ENV === "production" || false,
   secretKey: process.env.SECRET_KEY || "your-secret-whatever",
 }
 
