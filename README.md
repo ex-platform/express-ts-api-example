@@ -4,7 +4,7 @@
 
 REST API using Express, TypeScript, TypeORM.
 
-![Desktop img](./desktop.jpg)
+![Desktop img](./docs/desktop.jpg)
 
 ## Initial setup
 
@@ -41,7 +41,7 @@ yarn typeorm migration:generate -n <MIGRATION_NAME>
 yarn run typeorm migration:show
 ```
 
-If in mono-repo, you need to change script in `package.json` and use `src/app/typeorm.ts`
+If in mono-repo, you need to change script in `package.json` and use config in `db/typeorm.ts`
 
 ```json
 {
