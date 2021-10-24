@@ -1,4 +1,5 @@
-import { Application } from "express";
+import { Application, Response } from "express";
+import passport = require("passport");
 
 import catchAsync from "../utils/catchAsync";
 
@@ -6,13 +7,12 @@ const generalRouter = (app: Application) => {
   app.get(
     "/",
     catchAsync(async (req, res, next) => {
-      console.log('hello')
       res.send("Hello World!");
     })
   );
 
   app.get(
-    "/viewCount",
+    "/view-count",
     catchAsync(async (req, res, next) => {
       if (req.session.viewCount) {
         req.session.viewCount += 1;
@@ -24,10 +24,21 @@ const generalRouter = (app: Application) => {
   );
 
   app.get(
-    "/catchAsync",
+    "/catch-error",
     catchAsync(async (req, res, next) => {
       throw new Error("can you catch it?");
     })
+  );
+
+  app.get("/auth/kakao", passport.authenticate("kakao"));
+  app.get(
+    "/auth/kakao/callback",
+    passport.authenticate("kakao", {
+      failureRedirect: "/",
+    }),
+    (req, res) => {
+      res.redirect("/");
+    }
   );
 };
 

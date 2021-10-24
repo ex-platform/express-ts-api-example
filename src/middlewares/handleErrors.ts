@@ -38,7 +38,7 @@ const handleErrors: ErrorRequestHandler = (err: AppError, req, res, next) => {
       .json({ status: "error", message: "Something went very wrong!" });
   }
   // Send Error - Dev
-  req.log.error(err.stack);
+  req.log.warn(err.stack);
   return res.status(err.statusCode).json({ err });
 };
 
