@@ -1,4 +1,4 @@
-import { Application, Response } from "express";
+import { Application } from "express";
 import passport = require("passport");
 
 import catchAsync from "../utils/catchAsync";
